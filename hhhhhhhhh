@@ -1,7 +1,7 @@
 #ifndef ALGORITM_H_INCLUDED
 #define ALGORITM_H_INCLUDED
 #include <vector>
-
-std::vector <int> bubble_sort(std::vector <int> mass);
+using namespace std;
+vector <int> bubble_sort(vector <int> mass);
 
 #endif // ALGORITM_H_INCLUDED
