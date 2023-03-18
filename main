@@ -1,0 +1,14 @@
+#include <iostream>
+#include <vector>
+#include "algoritm.h"
+
+using namespace std;
+
+int main()
+{
+    vector<int> mass = {3, 7, 1, 2, -9, 4, 3, 0};
+    vector<int> sorted_mass = bubble_sort(mass);
+    for(int i =0;i < sorted_mass.size();i++)
+        cout << sorted_mass[i] << " ";
+    return 0;
+}
