@@ -1,40 +1,43 @@
 #include <vector>
-#include "algoritm.h"
+#include "algorithm.h"
 
 using namespace std;
 
-vector <int> bubble_sort(vector <int> mass) {
-
+vector <int> bubble_sort(vector <int> mass){
     int c;
-
-    for(int i = 0; i < mass.size(); i++){
-        for(int j = 0; j < mass.size(); j++) {
+    for(int i = 0; i < mass.size() - 1; i++)
+        for(int j = 0; j < mass.size() - 1 - i; j++){
             if(mass[j] > mass[j+1]){
                 c = mass[j];
                 mass[j] = mass[j+1];
                 mass[j+1] = c;
             }
         }
-    }
-
-    return mass;
+        return mass;
 }
-vector <int> shaker_sort(vector <int> mass){
+
+vector <int> shaker_sort(vector <int> mass) {
+
     int f;
-    for(int i = 0;i < mass.size();i++)
-        for(int j = 0;j < mass.size()-1;j++){
-                if(mass[j] > mass[j+1]){
-                    int c = mass[j];
-                    mass[j] = mass[j+1];
-                    mass[j+1] = c;
-}}
-            for(int g = 0; g < mass.size()-1;g++){
-                    if(mass[g] > mass[g+1]){
-                    f = mass[g];
-                    mass[g] = mass[g+1];
-                    mass[g+1] = f;
-                    }
+
+    for(int i = 0; i < mass.size() / 2; i++) { 
+        for(int j = i; j < mass.size() - 1 - i; j++){
+            if(mass[j] > mass[j+1]){
+                f = mass[j];
+                mass[j] = mass[j+1];
+                mass[j+1] = f;
             }
-            return mass;
         }
 
+        for(int j = mass.size() - i - 1; j > i; j--) {
+            if(mass[j] < mass[j-1]) {
+                f = mass[j];
+                mass[j] = mass[j-1];
+                mass[j-1] = f;
+            }
+        }
+    }
+        
+            
+    return mass;
+}
