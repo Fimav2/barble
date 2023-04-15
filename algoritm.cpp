@@ -41,3 +41,22 @@ vector <int> shaker_sort(vector <int> mass) {
             
     return mass;
 }
+vector<int> comb_sort(vector <int> mass){
+    int c;
+    int N = mass.size();
+    int step = N - 1;
+    double factor = 1.2473309;
+
+    while (step >= 1){
+        for(int i = 0; i < N - step;i++){
+            if(mass[i] > mass[i+step]){
+                c = mass[i];
+                mass[i] = mass[i+step];
+                mass[i+step] = c;
+            }
+
+        }
+        step /= factor;
+    }
+    return mass;
+}
